@@ -3,7 +3,9 @@
   padding: 0;
 }
 
-body{
+
+body,
+#app {
   width: 100vw;
   height: 100vh;
 }
@@ -15,4 +17,24 @@ canvas {
   top: 0;
   width: 100vw;
   height: 100vh;
+}
+
+#fullscreen-btn,
+#exit-fullscreen-btn {
+  padding: 15px;
+  font-weight: bold;
+  z-index: 999;
+}
+
+.top-menu {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.top-menu > button{
+  margin-right: 20px;
 }
