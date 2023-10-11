@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 // 创建场景
-const scene = new THREE.Scene();
+export const scene = new THREE.Scene();
 //创建相机
 const camera = new THREE.PerspectiveCamera(
     45,//视角
@@ -32,12 +32,25 @@ controls.autoRotateSpeed = 5;
 
 // 创建几何体
 const geometry = new THREE.BoxGeometry(1, 1, 1);
+console.log('geometry :>> ', geometry);
 // 创建材质
-export const parentMaterial = new THREE.MeshBasicMaterial({ color: 0xffc71b });//黄色
-const childMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });//绿色
+export const parentMaterial0 = new THREE.MeshBasicMaterial({ color: 0xffc71b });//黄色
+export const parentMaterial1 = new THREE.MeshBasicMaterial({ color: 0x4efeff });//黄色
+export const parentMaterial2 = new THREE.MeshBasicMaterial({ color: 0x262eff });//黄色
+export const parentMaterial3 = new THREE.MeshBasicMaterial({ color: 0xf82f00 });//黄色
+export const parentMaterial4 = new THREE.MeshBasicMaterial({ color: 0x6988ff });//黄色
+export const parentMaterial5 = new THREE.MeshBasicMaterial({ color: 0x00aeec });//黄色
 
+const childMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 },);//绿色
 // 创建网格
-export const parentCube = new THREE.Mesh(geometry, parentMaterial);
+export const parentCube = new THREE.Mesh(geometry, [
+    parentMaterial0,
+    parentMaterial1,
+    parentMaterial2,
+    parentMaterial3,
+    parentMaterial4,
+    parentMaterial5,
+]);
 
 const childCube = new THREE.Mesh(geometry, childMaterial);
 childCube.scale.set(0.5, 0.5, 0.5);//局部，相对于父元素

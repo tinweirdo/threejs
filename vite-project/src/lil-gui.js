@@ -1,5 +1,6 @@
 import { GUI } from "three/examples/jsm/libs/lil-gui.module.min.js";
-import { parentCube, parentMaterial } from './render.js';
+import { parentCube, parentMaterial0 } from './base-render.js';
+import { triangle } from './triangle.js';
 
 export const evenObj = {
     fullScreen: () => {
@@ -9,7 +10,6 @@ export const evenObj = {
         document.exitFullscreen();
     }
 }
-
 export const gui = new GUI();
 gui.add(evenObj, "fullScreen").name("全屏");
 gui.add(evenObj, "exitFullScreen").name("退出全屏");
@@ -27,7 +27,7 @@ folder1.add(parentCube.position, "y").min(0).max(5).step(1).name("立方体 y �
 folder1.add(parentCube.position, "z").min(0).max(5).step(1).name("立方体 z 轴位置");
 
 // 设置父元素材质为线框模式
-gui.add(parentMaterial, "wireframe").name("父级立方体线框模式");
+gui.add(parentMaterial0, "wireframe").name("父级立方体线框模式");
 
 // 改变 cube 颜色
 const cubeParams = { cubeColor: "#ffc71b" }
@@ -37,6 +37,7 @@ gui.addColor(cubeParams, "cubeColor")
         parentCube.material.color.set(val);
     })
 
+// #region 以下是测试数据
 
 const folder2 = gui.addFolder("示例测试");
 
@@ -77,3 +78,4 @@ const colorFormats = {
 };
 
 folder2.addColor(colorFormats, 'string');
+// #endregion
