@@ -1,5 +1,7 @@
 import * as THREE from 'three';
-import { scene } from './base-render.js';
+import { scene } from './base.js';
+import gui from './gui.js';
+
 const geometry = new THREE.BufferGeometry();
 // 创建顶点数据
 // 顶点是有顺序的，逆时针为正面
