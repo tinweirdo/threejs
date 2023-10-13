@@ -3,7 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 // 创建场景
 export const scene = new THREE.Scene();
 //创建相机
-const camera = new THREE.PerspectiveCamera(
+export const camera = new THREE.PerspectiveCamera(
     45,//视角
     window.innerWidth / window.innerHeight,//长宽比
     0.1,//近平面
