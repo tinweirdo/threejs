@@ -1,5 +1,6 @@
 import * as THREE from 'three';
-import { scene } from './base.js';
+import { scene, camera, renderer,controls } from './base.js';
+
 import gui from './gui.js';
 
 const geometry = new THREE.BufferGeometry();
@@ -38,3 +39,10 @@ geometry.addGroup(3, 3, 1);
 
 export const triangle = new THREE.Mesh(geometry, [material1, material2]);
 scene.add(triangle);
+
+function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+}
+animate();

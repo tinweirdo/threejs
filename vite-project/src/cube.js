@@ -1,6 +1,7 @@
 
 import * as THREE from 'three';
-import { scene } from './base.js';
+import { scene, camera, renderer, controls } from './base.js';
+
 import gui from './gui.js';
 // 创建几何体
 const geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -59,6 +60,14 @@ gui.addColor(cubeParams, "cubeColor")
     .onChange(val => {
         parentCube.material.color.set(val);
     })
+
+
+function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+}
+animate();
 
 
 

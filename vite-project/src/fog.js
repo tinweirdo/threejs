@@ -1,5 +1,6 @@
 import * as THREE from 'three';
-import { scene, camera } from './base.js';
+import { scene, camera, renderer,controls } from './base.js';
+
 import gui from './gui.js';
 
 // 创建长方体
@@ -16,3 +17,10 @@ scene.add(box);
 // scene.fog = new THREE.Fog(0x999999, 0.1, 50);//线性雾
 scene.fog = new THREE.FogExp2(0x999999, 0.01);// 指数雾
 scene.background = new THREE.Color(0x999999);//背景和雾颜色一致，视觉上效果好些
+
+function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+}
+animate();

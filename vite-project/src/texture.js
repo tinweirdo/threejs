@@ -1,5 +1,6 @@
 import * as THREE from 'three';
-import { scene } from './base.js';
+import { scene, camera, renderer,controls } from './base.js';
+
 import gui from './gui.js';
 // 导入 hdr 加载器
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
@@ -65,3 +66,10 @@ folder.add(texture, "colorSpace", {
     // 需要更新
     texture.needsUpdate = true
 })
+
+function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
+}
+animate();
