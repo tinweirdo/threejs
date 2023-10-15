@@ -5,7 +5,8 @@
 // import * as Fog from './fog.js';//线性雾和指数雾
 // import * as Gltf from './gltf.js';//加载外部模型
 // import * as RayCaster from './raycaster.js';//光线投射，改变点击球体颜色
-import * as Tween from './tween.js';//补间动画
+// import * as Tween from './tween.js';//补间动画
+import * as LightAndShadow from './light-and-shadow.js';//灯光与阴影
 
 // 全屏
 document.getElementById("fullscreen-btn").onclick = () => {
