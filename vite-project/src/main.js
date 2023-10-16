@@ -6,7 +6,8 @@
 // import * as Gltf from './gltf.js';//加载外部模型
 // import * as RayCaster from './raycaster.js';//光线投射，改变点击球体颜色
 // import * as Tween from './tween.js';//补间动画
-import * as LightAndShadow from './light-and-shadow.js';//灯光与阴影
+// import * as directionalLightAndShadow from './directionalLight-and-shadow.js';//灯光与阴影,基本的平行光
+import * as spotLightAndShadow from './spotLight-and-shadow.js';//灯光与阴影，聚光灯
 
 // 全屏
 document.getElementById("fullscreen-btn").onclick = () => {
