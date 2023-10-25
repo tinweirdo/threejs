@@ -68,9 +68,23 @@ animate();
 </script>
 
 <template>
-    <div ref="container">
+    <div ref="container" id="container">
         <slot v-if="ready" />
     </div>
 </template>
 
-<style></style>
+<style >
+#container {
+    width: 100vw;
+    height: 100vh;
+}
+
+#container > canvas {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+</style>
